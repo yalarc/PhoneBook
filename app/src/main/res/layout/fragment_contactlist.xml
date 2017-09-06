@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBEBEB"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/layout_daiban_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:background="@color/ht_hred_title" >
+
+        <ImageView
+            android:id="@+id/btn_daiban_person"
+            style="@style/title_button"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/header_bar_btn_selector"
+            android:src="@drawable/btn_community_list"
+            android:scaleType="center" />
+        <ImageView
+            android:id="@+id/bit_back"
+            style="@style/title_button"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/header_bar_btn_selector"
+            android:src="@drawable/btn_back"
+            android:visibility="gone"
+            android:scaleType="center" />
+        <TextView
+            android:id="@+id/daibantopTabIndicator_bbslist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:text="通讯录"/>
+
+        <ImageButton
+            android:id="@+id/title_right_new_function"
+            style="@style/title_button"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right|center_vertical"
+            android:focusable="true"
+            android:visibility="gone"
+            android:src="@drawable/btn_add" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_soso"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#EBEBEB"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" >
+
+        <com.htmitech.app.widget.CustomEditText
+            android:id="@+id/school_friend_member_search_input"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sreach"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/search_back"
+            android:drawableLeft="@drawable/mx_search_bar_icon_normal"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/ic_edit_text_delbtn"
+            android:freezesText="true"
+            android:gravity="center_vertical"
+            android:hint="@string/school_friend_search_hint"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/login_form_hint"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@drawable/bg_cut_line" />
+    <FrameLayout
+        android:id="@+id/frame_search"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone">
+        <ListView
+            android:id="@+id/search_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#d9d9d9"
+            android:dividerHeight="0.1dp"
+            android:scrollbars="none"
+            />
+        <ProgressBar
+            android:id="@+id/progress_search"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@anim/imofan_round_progress_bar_1" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fragment_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/rl_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+<!--             <LinearLayout -->
+<!--                 android:id="@+id/ll_loading" -->
+<!--                 android:layout_width="match_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_marginLeft="10dp" -->
+<!--                 android:layout_marginTop="2dp" -->
+<!--                 android:gravity="center_vertical" -->
+<!--                 android:visibility="gone" > -->
+
+<!--                 <ProgressBar -->
+<!--                     android:layout_width="28dp" -->
+<!--                     android:layout_height="28dp" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/tv_loaing" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_marginLeft="6dp" -->
+<!--                     android:text="正在刷新联系人..." /> -->
+<!--             </LinearLayout> -->
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#d9d9d9"
+                android:dividerHeight="0.1dp"
+                android:listSelector="@null"
+                android:scrollbars="none" />
+
+            <com.htmitech.app.widget.Sidebar
+                android:id="@+id/sidebar"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@android:color/transparent"
+                android:clickable="true" />
+
+            <TextView
+                android:id="@+id/floating_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/show_head_toast_bg"
+                android:gravity="center"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:textColor="@android:color/white"
+                android:textSize="40sp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+        <ProgressBar
+            android:id="@+id/progress_"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:indeterminateDrawable="@anim/imofan_round_progress_bar_1" />
+    </FrameLayout>
+
+</LinearLayout>
